@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+}
+
+group 'ru.opencms.web.soft.malikov'
+version '1.0'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+    jcenter()
+    maven {
+        url "http://maven.vaadin.com/vaadin-addons"
+    }
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile group: 'org.opencms', name: 'opencms-core', version: '10.5.4'
+}
+
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'OpenCms module', 'Implementation-Version': version
+    }
+}
